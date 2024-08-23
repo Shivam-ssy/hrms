@@ -57,7 +57,7 @@ function Register() {
         name: formData.name,
         email: formData.email,
         password: formData.password,
-        image: file,
+        image: file[0],
       }).finally(() => setLoading(false));
       console.log(res);
       if (res === "auth/email-already-in-use")
