@@ -1,0 +1,112 @@
+
+
+
+
+/* Modal container (hidden by default) */
+.modal {
+    display: flex; /* Use flexbox to center modal content */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+  }
+  
+  /* Modal content */
+  .modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Maximum width of the modal */
+  }
+  
+  /* Close button */
+  .modal-close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right:5px;
+  }
+  
+  .modal-close-btn:hover {
+    color: black;
+  }
+  .error {
+    color: red;
+    font-size: 0.875em;
+  }
+
+
+  /* FormComponent.css */
+
+.modal-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .modal-h1 {
+    font-size: 20px;
+    color: #333;
+  } 
+  
+  .modal-div{
+    margin-bottom: 15px;
+  }
+  
+  .modal-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .modal-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .modal_button {
+    width: 100%;
+    padding: 10px;
+    margin-top:20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .modal_button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 600px) {
+    .modal-form {
+      padding: 10px;
+    }
+  
+    .modal-input {
+      padding: 6px;
+    }
+  
+    .modal_button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+  

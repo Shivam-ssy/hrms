@@ -39,6 +39,7 @@ const signin=async ({email,password})=>{
 }
 const logout=async()=>{
   try {
+    localStorage.clear("user");
     await signOut(auth);
     return true
   } catch (error) {

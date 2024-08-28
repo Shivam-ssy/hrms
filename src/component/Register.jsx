@@ -81,7 +81,7 @@ function Register() {
   };
   return (
     <div>
-      <main style={{background: `#C9CCD3`, backgroundImage: `linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%)`, backgroundBlendMode:` lighten`}} className="h-screen  bg-no-repeat bg-cover  flex relative p-3 justify-center items-center font-serif w-full">
+      <main  className=" bg-no-repeat bg-cover  flex relative p-3 justify-center items-center font-serif w-full">
         <ToastContainer
           position="top-right"
           autoClose={5000}
@@ -95,8 +95,7 @@ function Register() {
         />
         <div className="md:bg-white/30 bg-black/40 shadow-inner md:backdrop-blur-xl border border-white/30  shadow-gray-700  py-5 px-2 flex flex-col justify-center md:px-10 rounded-3xl">
           <h3 className="text-xl  text-center">
-            Welcome to <span className="text-sky-700">HRMS</span>
-          </h3>
+Create a Employee          </h3>
           <div className="flex justify-center  my-5">
             <label className="cursor-pointer flex flex-col items-center gap-3" htmlFor="profile">
               {file ? (
@@ -111,7 +110,7 @@ function Register() {
                   alt=""
                 />
               )}
-              Select Your Profile Image
+              Select his/her Profile Image
             </label>
             <input
               onChange={handleImageChange}
@@ -153,12 +152,7 @@ function Register() {
             name="password"
             inputRoleImage="/key-fill.svg"
           />
-          <div className="">
-            Already Have Account?{" "}
-            <Link className="text-blue-600" to="/Login">
-              Login
-            </Link>
-          </div>
+         
           {loading ? (
             <div className="spinner place-self-center mt-5 md:mt-10"></div>
           ) : (
@@ -166,7 +160,7 @@ function Register() {
               onClick={handleSubmit}
               className="w-fit cursor-pointer mt-5 rounded-xl self-center text-center  transition duration-300 ease-out hover:bg-white py-2 px-5  bg-sky-700"
             >
-                Register
+                Create
             </button>
           )}
         </div>

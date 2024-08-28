@@ -1,0 +1,47 @@
+<div>
+{/* <button onClick={onOpen}>addMember</button> */}
+<div className="heading">
+    <h3>Name</h3>
+    <h3>Name</h3>
+    <h3>Name</h3>
+    <h3>Name</h3>
+    <h3>Name</h3>
+    <h3>Name</h3>
+</div>
+{/* <div >
+{list.map(object => (
+    <ListCard key={object.id} object={object} deleteObject={deleteObject}/>
+))}
+</div> */}
+</div>
+
+
+<table className="employ_table">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Number</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+    {/* <tr>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Role</td>
+      <td>Number</td>
+      <td>Date</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <th>Age</th>  
+      <td>50</td>
+      <td>94</td>
+    </tr> */}
+  </table>
+
+
+
+
+
+

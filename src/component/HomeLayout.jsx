@@ -18,7 +18,7 @@ function HomeLayout() {
         <div className="border py-5 border-black/20 border-x-0 px-5">
           <BasicBreadcrumbs/>
         </div>
-      <div className="p-10 w-full max-h-screen ">
+      <div className="p-10 w-full max-h-screen overflow-auto relative">
         <Outlet/>
       </div>
       </div>
