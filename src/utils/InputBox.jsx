@@ -47,5 +47,21 @@ const InputBox = ({
     </div>
   );
 };
-
+InputBox.propTypes = {
+  label: PropTypes.string,
+  type: PropTypes.string,
+  value: PropTypes.any,
+  onChange: PropTypes.func,
+  id: PropTypes.string,
+  required: PropTypes.bool,
+  disabled: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  inputRoleImage: PropTypes.string,
+  className: PropTypes.string,
+};
+InputBox.defaultProps = {
+  required: false,
+  disabled: false,
+  readOnly: false,
+};
 export default InputBox;
