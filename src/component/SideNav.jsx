@@ -55,7 +55,7 @@ function SideNav() {
         content="Are You Sure to Log Out"
         isAgreed={handleAgree}
       />
-      <div className="flex flex-col border py-16 items-center">
+      <div className="flex flex-col border py-12 items-center">
         <img
           className="bg-white p-2 rounded-full w-24 h-24"
           src={user.photoURL || "/user-3-fill.svg"}
@@ -73,21 +73,35 @@ function SideNav() {
            <details className="flex flex-col">
             <summary className="list-none"> <i className="ri-user-2-fill "></i> Emplyee Management</summary>
             <Link className="text-base font-normal px-10 " to="/employee">Employee Directory</Link>
-            {/* <Link className="text-base font-normal px-10 " to="/create-employee">Create a Employee</Link> */}
+            <Link className="text-base font-normal px-10 " to="/profile">Edit Your Info</Link>
+            <Link className="text-base font-normal px-10 " to="/create-employee">Create Employee</Link>
             </details>
           </li>
           <li className="mb-3 text-lg cursor-pointer flex items-center gap-2 font-semibold">
             {/* <i className="ri-calendar-schedule-line "></i>Leave Management */}
-            <details>
+            <details className="flex flex-col">
               <summary className="list-none"><i className="ri-calendar-schedule-line "></i> Leave Management</summary>
       <Link className="text-base font-normal px-10 " to="/apply-leave">Apply Leave</Link>
+      <Link className="text-base font-normal px-10 " to="/apply-leave">Leave History</Link>
        </details>
           </li>
           <li className="mb-3 text-lg cursor-pointer flex items-center gap-2 font-semibold">
-            <i className="ri-money-rupee-circle-fill "></i>Payroll Managment
+            {/* <i className="ri-money-rupee-circle-fill "></i>Payroll Managment */}
+            <details className="flex flex-col">
+              <summary className="list-none"> <i className="ri-money-rupee-circle-fill "></i> Payroll Managment</summary>
+              <Link className="text-base font-normal px-10 " to="/payroll-create">Payroll Record</Link>
+              <Link className="text-base font-normal px-10 " to="/payroll-report">Payroll Report</Link>
+              <Link className="text-base font-normal px-10 " to="/payroll-dashboard">Payroll Dashboard</Link>
+              <Link className="text-base font-normal px-10 " to="/payroll-hr">Payroll Hr Dashboard</Link>
+            </details>
           </li>
           <li className="mb-3 text-lg cursor-pointer flex items-center gap-2 font-semibold">
-            <i className="ri-group-fill "></i>Performance Managment
+            <details className="flex flex-col">
+              <summary className="list-none"> <i className="ri-group-fill "></i> Performance Managment</summary>
+              <Link className="text-base font-normal px-10 " to="/company-performance">Company Performance</Link>
+              <Link className="text-base font-normal px-10 " to="/individual-perfromance">Individual Performance</Link>
+              <Link className="text-base font-normal px-10 " to="/review-perfromance"> Performance Review</Link>
+            </details>
           </li>
           <li className="mb-3 text-lg cursor-pointer flex items-center gap-2 font-semibold">
             <i className="ri-notification-3-fill "></i>Notification
@@ -99,7 +113,7 @@ function SideNav() {
             {/* <i className="ri-user-settings-line "></i>Setting */}
             <details className="flex flex-col">
               <summary className="list-none"><i className="ri-calendar-schedule-line "></i> Setting</summary>
-                    <Link to="/profile" className="text-base font-normal px-10">Your Profile</Link>
+                    {/* <Link to="/profile" className="text-base font-normal px-10">Your Profile</Link> */}
                     <button className="font-normal text-base mx-10 " onClick={handleClickOpen}>logout</button>
 
             </details>

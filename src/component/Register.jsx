@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { signup } from "../BackendAsService/features";
+import { createUser } from "../BackendAsService/Crud";
 function Register() {
   const [file, setFile] = useState(null);
   const [previewURL, setPreviewURL] = useState(null);
@@ -13,7 +14,8 @@ function Register() {
     name: "",
     email: "",
     password: "",
-    role: "",
+    role: "employee",
+    phone:""
   });
   const handleChange = (e) => {
     e.preventDefault();
@@ -53,25 +55,28 @@ function Register() {
       console.log("file before sign",file);
       
       setLoading(true);
-      const res = await signup({
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-        image: file[0],
+      const res = await createUser({
+        formData:formData,image:file[0]
       }).finally(() => setLoading(false));
-      console.log(res);
-      if (res === "auth/email-already-in-use")
-        toast.error("This Email is Already in Use");
-      else if (res === "auth/weak-password") {
-        toast.error("Plese Enter a Strong password");
-      }
-      else if (res === "auth/invalid-email") {
-        toast.error("Plese Enter a Valid");
+      console.log("data at register",res);
+      // if (res === "auth/email-already-in-use")
+      //   toast.error("This Email is Already in Use");
+      // else if (res === "auth/weak-password") {
+      //   toast.error("Plese Enter a Strong password");
+      // }
+      // else if (res === "auth/invalid-email") {
+      //   toast.error("Plese Enter a Valid");
       
-      } else if (res) {
-        toast.success("Register Successfull");
-      } else {
-        toast.error("Something Went wrong");
+      // } else if (res) {
+      //   toast.success("Register Successfull");
+      // } else {
+      //   toast.error("Something Went wrong");
+      // }
+      if (res.status===200) {
+        toast.success(res.message)
+      }
+      else{
+        toast.error(res.message)
       }
     }
 
@@ -141,6 +146,17 @@ Create a Employee          </h3>
             name="email"
             inputRoleImage="/mail-fill.svg"
           />
+            <InputBox
+              value={formData.phone}
+              onChange={handleChange}
+              className="mt-5 mb-2"
+              required
+              InputStyle="w-80 p-3 outline-none"
+              placeholder="Enter Mobile No"
+              type="tel"
+              name="phone"
+              inputRoleImage="/phone-fill.svg"
+            />
           <InputBox
             value={formData.password}
             onChange={handleChange}

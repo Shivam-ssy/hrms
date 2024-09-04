@@ -4,12 +4,12 @@ import DashCard from "./DashCard.jsx"
 function Dashboard() {
   return (
     <div>
-      <div className="p-10 w-full h-auto grid-cols-1 md:h-[60vh] grid  md:grid-cols-3">
+      <div className="p-10 w-full h-auto gap-5 grid-cols-1 lg:h-[60vh] grid  lg:grid-cols-3">
         <DashCard title="Total Employee:" counting="3000" />
         <DashCard title="Pending leave:" counting="100" />
         <DashCard title="Payroll:" counting="500/3000" />
         <DashCard title="New Employee:" counting="200" />
-        <div className="md:row-start-1 md:col-start-3 md:row-span-2 place-self-center self-center">
+        <div className="lg:row-start-1 row-start-1 lg:col-start-3 lg:row-span-2 place-self-center self-center">
           <PieChart
             series={[
               {

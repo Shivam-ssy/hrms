@@ -40,7 +40,9 @@ const signin=async ({email,password})=>{
 const logout=async()=>{
   try {
     localStorage.clear("user");
+    localStorage.clear("userData")
     await signOut(auth);
+    window.location.href='/'
     return true
   } catch (error) {
     console.error("Error logging out: ", error);

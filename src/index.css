@@ -32,3 +32,12 @@ select:-webkit-autofill:focus {
     -webkit-text-fill-color: #000 !important;
     transition: background-color 5000s ease-in-out 0s;
 }
+.element-class {
+   overflow: auto; /* or overflow: scroll; */
+   scrollbar-width: none; /* Firefox */
+ }
+ 
+ .element-class::-webkit-scrollbar {
+   display: none; /* Chrome, Safari, Opera */
+ }
+ 

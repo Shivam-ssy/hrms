@@ -1,10 +1,11 @@
 import React from "react";
-import { ToastContainer, toast } from "react-toastify";
 import InputBox from "../utils/InputBox";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { signin } from "../BackendAsService/features.js";
+import {  getEmployeeData } from "../BackendAsService/Crud.js";
 function Login() {
   const [loading, setLoading] = useState(false);
   const user = localStorage.getItem("user");
@@ -36,9 +37,17 @@ function Login() {
     
     console.log(res);
     if (res.user) {
-      localStorage.setItem("user", JSON.stringify(res.user));
+      const user=await getEmployeeData({uid:res.user.uid});
+      if(user.status==200){
+        localStorage.setItem("user", JSON.stringify(res.user));
+        localStorage.setItem("userData", JSON.stringify(user.data));
+        navigate("/dashboard");
+
+      }
+      else{
+        toast.error("Failed to fetch the data Please sign in again")
+      }
       // toast.success("Login Successfull")
-      navigate("/dashboard");
     } else {
       toast.error("Please Enter A valid email and password");
     }
@@ -68,7 +77,7 @@ function Login() {
             onChange={handleChange}
             className="mt-5"
             required
-            InputStyle="w-80 p-3"
+            InputStyle="w-80 p-3 outline-none"
             placeholder="Enter Email"
             type="email"
             name="email"
@@ -79,7 +88,7 @@ function Login() {
             onChange={handleChange}
             className="mt-5 mb-2"
             required
-            InputStyle="w-80 p-3"
+            InputStyle="w-80 p-3 outline-none"
             placeholder="Enter Password"
             type="password"
             name="password"
