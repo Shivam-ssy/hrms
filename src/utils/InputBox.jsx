@@ -1,4 +1,3 @@
-import React from 'react';
 
 const InputBox = ({
   label,
@@ -7,7 +6,7 @@ const InputBox = ({
   onChange,
   placeholder = '',
   name,
-  id,
+ 
   required = false,
   disabled = false,
   readOnly = false,
@@ -23,9 +22,9 @@ const InputBox = ({
 }) => {
   return (
     <div className={`flex px-2 border items-center border-black rounded-xl  py-1 bg-white ${className}`}>
-      {label && <label htmlFor={id || name}>{label}</label>}
+      {/* {label && <label htmlFor={id || name}>{label}</label>} */}
       <div>
-        <img className='h-8' src={rest.inputRoleImage} alt="" />
+        <img className='h-8' src={rest.inputroleimage} alt="" />
       </div>
       <input
         type={type}
@@ -33,7 +32,6 @@ const InputBox = ({
         onChange={onChange}
         placeholder={placeholder}
         name={name}
-        id={id || name}
         required={required}
         disabled={disabled}
         readOnly={readOnly}

@@ -1,4 +1,3 @@
-import React from "react";
 import InputBox from "../utils/InputBox";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -72,22 +71,23 @@ function Login() {
           </h3>
           <img className="h-36 w-36 self-center" src="/avatar.png" alt="" />
           <InputBox
-            inputRoleImage="/mail-fill.svg"
+            inputroleimage="/mail-fill.svg"
             value={formData.email}
             onChange={handleChange}
             className="mt-5"
-            required
+            required={true}
             InputStyle="w-80 p-3 outline-none"
             placeholder="Enter Email"
             type="email"
             name="email"
+            
           />
           <InputBox
-            inputRoleImage="/key-fill.svg"
+            inputroleimage="/key-fill.svg"
             value={formData.password}
             onChange={handleChange}
             className="mt-5 mb-2"
-            required
+            required={true}
             InputStyle="w-80 p-3 outline-none"
             placeholder="Enter Password"
             type="password"

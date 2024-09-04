@@ -1,5 +1,4 @@
 // src/components/Dashboard.jsx
-import React from 'react';
 import { Box, Typography, Paper } from '@mui/material';
 import { ArrowUpward } from '@mui/icons-material';
 import { Pie, Line } from 'react-chartjs-2'; // Import Line chart

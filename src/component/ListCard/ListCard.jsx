@@ -1,4 +1,3 @@
-import React from 'react'
 import './ListCard.css'
 
 const ListCard = ({object,deleteObject}) => {

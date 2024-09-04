@@ -1,4 +1,3 @@
-import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import InputBox from "../utils/InputBox";
 import "react-toastify/dist/ReactToastify.css";
@@ -128,7 +127,7 @@ Create a Employee          </h3>
             value={formData.name}
             onChange={handleChange}
             className="mt-5"
-            required
+            required="true"
             InputStyle="w-80 p-3 outline-none"
             placeholder="Enter Name"
             type="text"
@@ -139,7 +138,7 @@ Create a Employee          </h3>
             value={formData.email}
             onChange={handleChange}
             className="mt-5"
-            required
+            required={true}
             InputStyle="w-80 p-3 outline-none"
             placeholder="Enter Email"
             type="email"
@@ -150,7 +149,7 @@ Create a Employee          </h3>
               value={formData.phone}
               onChange={handleChange}
               className="mt-5 mb-2"
-              required
+              required={true}
               InputStyle="w-80 p-3 outline-none"
               placeholder="Enter Mobile No"
               type="tel"
@@ -161,7 +160,7 @@ Create a Employee          </h3>
             value={formData.password}
             onChange={handleChange}
             className="mt-5 mb-2"
-            required
+            required={true}
             InputStyle="w-80 p-3 outline-none"
             placeholder="Enter Password"
             type="password"

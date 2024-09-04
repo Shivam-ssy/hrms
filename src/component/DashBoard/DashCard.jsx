@@ -1,4 +1,3 @@
-import React from 'react'
 
 function DashCard({title,counting=0}) {
   return (
