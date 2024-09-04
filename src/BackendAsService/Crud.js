@@ -1,5 +1,5 @@
 import { doc, getDocs, query, where, getDoc, updateDoc, deleteDoc, collection, addDoc } from 'firebase/firestore';
-import { createUserWithEmailAndPassword, updateProfile, updateEmail, updatePassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { db, auth } from './Config.js';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from './Config.js';
@@ -34,7 +34,7 @@ const getEmployeeData=async({uid=null})=>{
       return { status: 200, data: data, message: "Data Fetched Successfully" };
       // Process the data as needed
     } else {
-      return { status: 404, data: null, message: error.code };
+      return { status: 404, data: null, message:"Some went wrong"};
     }
   } catch (error) {
     return { status: 500, data: null, message: error.code };

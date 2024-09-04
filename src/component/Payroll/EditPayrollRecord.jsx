@@ -1,4 +1,5 @@
-import  { useState } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import {
   Dialog,
   DialogTitle,
@@ -13,14 +14,25 @@ import {
 } from '@mui/material';
 
 const EditPayrollRecord = ({ open, onClose, record, onSave }) => {
-  // State to handle form values
   const [formValues, setFormValues] = useState({
-    payPeriodStart: record?.payPeriodStart || '',
-    payPeriodEnd: record?.payPeriodEnd || '',
-    salary: record?.salary || '',
-    deductions: record?.deductions || '',
-    status: record?.status || 'Processed'
+    payPeriodStart: '',
+    payPeriodEnd: '',
+    salary: '',
+    deductions: '',
+    status: 'Processed'
   });
+
+  useEffect(() => {
+    if (record) {
+      setFormValues({
+        payPeriodStart: record.payPeriodStart || '',
+        payPeriodEnd: record.payPeriodEnd || '',
+        salary: record.salary || '',
+        deductions: record.deductions || '',
+        status: record.status || 'Processed'
+      });
+    }
+  }, [record]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -28,7 +40,6 @@ const EditPayrollRecord = ({ open, onClose, record, onSave }) => {
   };
 
   const handleSave = () => {
-    // Logic to save the record
     onSave(formValues);
   };
 
@@ -117,6 +128,19 @@ const EditPayrollRecord = ({ open, onClose, record, onSave }) => {
       </DialogActions>
     </Dialog>
   );
+};
+
+EditPayrollRecord.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  record: PropTypes.shape({
+    payPeriodStart: PropTypes.string,
+    payPeriodEnd: PropTypes.string,
+    salary: PropTypes.number,
+    deductions: PropTypes.number,
+    status: PropTypes.string
+  }),
+  onSave: PropTypes.func.isRequired
 };
 
 export default EditPayrollRecord;

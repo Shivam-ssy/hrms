@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { TextField, Button, FormControl, InputLabel, Select, MenuItem, Paper, Container, Typography } from '@mui/material';
 import { useParams, useNavigate } from 'react-router-dom'; // Assuming you have react-router for routing
@@ -34,14 +33,12 @@ const updateUserData = async (userData) => {
 export default function EditUserPage() {
   const { userId } = useParams(); // Assumes the user ID is passed in the URL
   const navigate = useNavigate();
-  const [userData, setUserData] = useState(null);
   const [formData, setFormData] = useState(null);
-  const user=localStorage.getItem('user')
+
   useEffect(() => {
     const loadUserData = async () => {
       const data = await fetchUserData(userId);
-      setUserData(user);
-      setFormData(user);
+      setFormData(data);
     };
 
     loadUserData();

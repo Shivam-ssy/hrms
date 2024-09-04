@@ -1,12 +1,11 @@
 import  { useEffect } from "react";
-import MenuOption from "../utils/MenuOption";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import AlertDialog from "../utils/AlertDialog";
 import { logout } from "../BackendAsService/features";
 function SideNav() {
   const localData = localStorage.getItem("user");
-  let role ="ceo"
+  // let role ="ceo"
   const [open, setOpen] = useState(false);
   const [isAgreed, setIsAgreed] = useState(false);
   useEffect(()=>{
@@ -40,12 +39,12 @@ function SideNav() {
 
   const user = JSON.parse(localData);
   console.log(user.photoURL);
-  const temp = [
-    {
-      Link: "/employee/repo",
-      title: "Crete a repo",
-    },
-  ];
+  // const temp = [
+  //   {
+  //     Link: "/employee/repo",
+  //     title: "Crete a repo",
+  //   },
+  // ];
   return (
     <div className="font-serif  fixed w-80 border left-0 h-screen bg-transparent">
       <AlertDialog

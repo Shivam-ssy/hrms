@@ -1,12 +1,7 @@
-import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import {useLocation} from "react-router-dom"
-function handleClick(event) {
-  event.preventDefault();
-  console.info('You clicked a breadcrumb.');
-}
 
 export default function BasicBreadcrumbs() {
     const location = useLocation();

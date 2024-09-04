@@ -26,7 +26,7 @@ const Sidebar = () => {
   const [openEmployee, setEmployeeOpen] = useState(false);
   const [openPayroll, setPayrollOpen] = useState(false);
   const [openPerformance, setPerformanceOpen] = useState(false);
-  const [reportsOpen, setReportsOpen] = useState(false);
+  // const [reportsOpen, setReportsOpen] = useState(false);
   const [settingOpen, setSettingOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -40,9 +40,9 @@ const Sidebar = () => {
     setEmployeeOpen(!openEmployee);
   };
  
-  const handleReportsClick = () => {
-    setReportsOpen(!reportsOpen);
-  };
+  // const handleReportsClick = () => {
+  //   setReportsOpen(!reportsOpen);
+  // };
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -159,13 +159,13 @@ const Sidebar = () => {
             </ListItem>
           
             <ListItem button style={{ padding: '10px 40px' }}>
-            <Link to="/individual-performance"> <ListItemText primary="Individual Performance" /></Link>
+            <Link to="/individual-perfromance"> <ListItemText primary="Individual Performance" /></Link>
             </ListItem>
              
            
               
             <ListItem button style={{ padding: '10px 40px' }}>
-            <Link to="/review-performance"> <ListItemText primary="Payroll Dashboard" /></Link>
+            <Link to="/review-perfromance"> <ListItemText primary="Performance Review" /></Link>
             </ListItem>
 
           </List>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -6,27 +7,16 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-export default function AlertDialog({title, open, content, isAgreed, handleClose }) {
-//   const [open, setOpen] = React.useState(false);
-    const [isAgree,setIsAgree]=React.useState(false)
-//   const handleClickOpen = () => {
-//     setOpen(true);
-//   };
-
-//   const handleClose = () => {
-//     setOpen(false);
-//   };
-const handleAgreeClose = () => {
+export default function AlertDialog({ title, open, content, isAgreed, handleClose }) {
+  const handleAgreeClose = () => {
     handleClose();
-    isAgreed(true); // Notify parent that the user agreed
+    if (isAgreed) {
+      isAgreed(true); // Notify parent that the user agreed
+    }
   };
-
 
   return (
     <React.Fragment>
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
-        Open alert dialog
-      </Button> */}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -51,3 +41,15 @@ const handleAgreeClose = () => {
     </React.Fragment>
   );
 }
+
+AlertDialog.propTypes = {
+  title: PropTypes.string.isRequired,
+  open: PropTypes.bool.isRequired,
+  content: PropTypes.string.isRequired,
+  isAgreed: PropTypes.func,
+  handleClose: PropTypes.func.isRequired,
+};
+
+AlertDialog.defaultProps = {
+  isAgreed: null,
+};

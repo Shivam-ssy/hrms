@@ -1,4 +1,5 @@
 import { jsPDF } from "jspdf";
+import React from "react";
 import 'jspdf-autotable';
 import {
   Box,
@@ -12,7 +13,6 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { getPayrollList } from "../../BackendAsService/Crud";
 

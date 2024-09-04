@@ -2,8 +2,7 @@ import { ToastContainer, toast } from "react-toastify";
 import InputBox from "../utils/InputBox";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { signup } from "../BackendAsService/features";
+
 import { createUser } from "../BackendAsService/Crud";
 function Register() {
   const [file, setFile] = useState(null);

@@ -1,4 +1,5 @@
 import  { useState } from 'react';
+import React from 'react';
 import { jsPDF } from "jspdf";
 import 'jspdf-autotable';
 import {
@@ -27,7 +28,7 @@ import "react-toastify/dist/ReactToastify.css";
 const PayrollManagement = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [currentRecord, setCurrentRecord] = useState(null);
-  const [isEditing, setIsEditing] = useState(false);
+  // const [isEditing, setIsEditing] = useState(false);
   const [statusFilter, setStatusFilter] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -48,14 +49,14 @@ const PayrollManagement = () => {
       getData()
   },[])
   const handleOpenDialog = (edit, record = null) => {
-    setIsEditing(edit);
+    // setIsEditing(edit);
     setCurrentRecord(record);
     setOpenDialog(true);
   };
   const deletePayrollData=async (data)=>{
       console.log(data);
       const res=await deletePayrollById({id:data.id})
-      if(res.status=200){
+      if(res.status==200){
         toast.success(res.message)
       }
       else{

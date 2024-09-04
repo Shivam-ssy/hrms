@@ -1,14 +1,11 @@
-import { useState } from 'react'
 import './App.css'
-import {BrowserRouter,Routes,Route, Navigate, useNavigate} from "react-router-dom"
-import Landing from './component/Landing'
+import {BrowserRouter,Routes,Route, Navigate} from "react-router-dom"
 import Login from './component/Login'
 import Register from './component/Register.jsx'
 import Dashboard from './component/DashBoard/Dashboard.jsx'
 import HomeLayout from './component/HomeLayout.jsx'
 import StickyHeadTable from './component/EmployList/EmployeeLists.jsx'
 import  LeaveRequestForm  from './component/LeaveRequestForm.jsx'
-import Profile from './component/Profile/Profile.jsx'
 import EditModal from './component/EditModal.jsx'
 // import DashboardLayoutBasic from './component/SideNavs.jsx'
 import EditUserPage from './component/EmployList/EmployeeProfile.jsx'
@@ -21,7 +18,6 @@ import PayrollDashboard from './component/Payroll/PayrollDashboard.jsx'
 import PerformanceReview from './component/Performance/PerformanceReview.jsx'
 import { access } from './utils/Role.js'
 function App() {
-  const [count, setCount] = useState(0)
   const user=localStorage.getItem('userData')
   const userData=JSON.parse(user);
   console.log(userData);
